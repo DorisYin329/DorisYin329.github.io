@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Road Navigation | Shadow Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="demo.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a class="brand" href="../../index.html">☾ Shadow Moon</a>
+        <a href="../../index.html#projects">← Back to Projects</a>
+    </nav>
+
+    <main class="container">
+
+        <header class="hero">
+            <p class="eyebrow">Academic Project / Reinforcement Learning</p>
+            <h1>AI 助盲道路導航模擬</h1>
+            <h2>AI-Assisted Road Navigation Simulation</h2>
+
+            <p class="description">
+                利用 Minecraft 建立虛擬道路環境，搭配 Project Malmo
+                與 Q-learning，訓練 AI Agent 學習沿著指定道路行走及轉彎，
+                探索強化學習在助盲導航上的應用。
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Minecraft</span>
+                <span>Project Malmo</span>
+                <span>Q-learning</span>
+                <span>YOLOv8</span>
+                <span>PyTorch</span>
+            </div>
+
+            <div class="actions">
+                <a class="btn primary" href="#demo">Try Demo</a>
+                <a class="btn" href="https://github.com/DorisYin329/ai-crosswalk-navigation"
+                   target="_blank" rel="noopener noreferrer">
+                    View on GitHub
+                </a>
+            </div>
+        </header>
+
+        <section>
+            <p class="eyebrow">01 / Overview</p>
+            <h2>專題介紹</h2>
+
+            <div class="panel">
+                <p>
+                    本專題透過 Minecraft 模擬道路環境，
+                    使用 Project Malmo 建立 Agent 與環境之間的互動，
+                    並利用 Q-learning 進行導航訓練。
+                </p>
+
+                <div class="architecture">
+                    <div>Minecraft<br><small>虛擬環境</small></div>
+                    <span>→</span>
+                    <div>Malmo<br><small>環境觀察</small></div>
+                    <span>→</span>
+                    <div>Q-learning<br><small>動作決策</small></div>
+                    <span>→</span>
+                    <div>Agent<br><small>導航行動</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo">
+            <p class="eyebrow">02 / Interactive Demo</p>
+            <h2>道路導航互動模擬</h2>
+
+            <div class="panel">
+
+                <p class="notice">
+                    此為依照原始道路環境設計的簡化網頁模擬。
+                    自動導航使用規則式策略，並非原始 Malmo 模型推論。
+                </p>
+
+                <div class="stats">
+                    <div>
+                        <small>Steps</small>
+                        <strong id="steps">0</strong>
+                    </div>
+                    <div>
+                        <small>Total Reward</small>
+                        <strong id="reward">0.0</strong>
+                    </div>
+                    <div>
+                        <small>Status</small>
+                        <strong id="status">Ready</strong>
+                    </div>
+                </div>
+
+                <canvas id="roadCanvas" width="880" height="280"></canvas>
+
+                <div class="legend">
+                    <span>⬛ 道路 +5</span>
+                    <span>⬜ 石頭 -2</span>
+                    <span>💎 終點 +10</span>
+                    <span>🟪 Agent</span>
+                </div>
+
+                <div class="controls">
+                    <button id="leftBtn">↶ 左轉</button>
+                    <button id="forwardBtn">↑ 前進</button>
+                    <button id="rightBtn">↷ 右轉</button>
+                    <button id="stopBtn">停止</button>
+                </div>
+
+                <div class="controls">
+                    <button class="primary" id="autoBtn">
+                        ▶ Auto Navigation
+                    </button>
+                    <button id="resetBtn">↻ Reset</button>
+                </div>
+
+                <div class="state-info">
+                    <p>Last Action：<span id="action">—</span></p>
+                    <p>Position：<span id="position">—</span></p>
+                    <p>Direction：<span id="direction">—</span></p>
+                </div>
+
+                <h3>5 × 5 環境觀察</h3>
+                <p class="notice">依 Agent 朝向產生的簡化觀察範圍。</p>
+                <div id="observation" class="observation"></div>
+
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">03 / Q-learning</p>
+            <h2>強化學習參數</h2>
+
+            <div class="stats parameters">
+                <div><small>Episodes</small><strong>500</strong></div>
+                <div><small>Learning Rate</small><strong>0.1</strong></div>
+                <div><small>Discount Factor</small><strong>0.9</strong></div>
+                <div><small>Observation</small><strong>5 × 5</strong></div>
+            </div>
+
+        
+        </section>
+
+        <section>
+            <p class="eyebrow">04 / Project Video</p>
+            <h2>專題成果影片</h2>
+
+            <div class="panel">
+                <video controls preload="metadata" playsinline>
+                    <source src="final.mp4" type="video/mp4">
+                    您的瀏覽器不支援影片播放。
+                </video>
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">05 / Computer Vision</p>
+            <h2>YOLOv8 道路環境變識</h2>
+
+            <div class="panel">
+                <p>
+                    使用 YOLOv8 進行道路、人行道及斑馬線辨識，
+                    探索電腦視覺在 AI 助盲導航上的應用。
+                </p>
+
+                <video controls preload="metadata" playsinline>
+                    <source src="yolo-demo.mp4" type="video/mp4">
+                    您的瀏覽器不支援影片播放。
+
+                </video>
+                
+                <p class="notice">
+                    YOLOv8 — Road Environment Detection
+                </p>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>☾ Shadow Moon — Between Code & Stars</p>
+            <a href="../../index.html#projects">Back to Projects</a>
+        </footer>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadow Moon｜Between Code &amp; Stars.</title>
+  <meta name="description" content="Shadow Moon 是 DorisYin329 的個人網站：AI 與軟體開發作品、學習歷程，以及動畫、音樂、旅行與攝影的生活紀錄。">
+  <meta name="author" content="DorisYin329">
+  <meta name="theme-color" content="#0b1026">
+  <link rel="canonical" href="https://dorisyin329.github.io/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Shadow Moon">
+  <meta property="og:title" content="Shadow Moon｜Between Code & Stars.">
+  <meta property="og:description" content="Welcome to my little universe. AI、程式開發與生活紀錄的個人空間。">
+  <meta property="og:url" content="https://dorisyin329.github.io/">
+  <meta property="og:image" content="https://dorisyin329.github.io/images/og-cover.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shadow Moon",
+    "url": "https://dorisyin329.github.io/",
+    "inLanguage": "zh-Hant-TW",
+    "description": "個人介紹、技術作品集與生活紀錄"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- ============ Header / Nav ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Shadow Moon 回到首頁">
+        <svg class="logo-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <path d="M22.5 4.2A12.5 12.5 0 1 0 27.8 21 10.2 10.2 0 0 1 22.5 4.2Z" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">Shadow Moon</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="主要導覽">
+        <ul>
+          <li><a href="#home" data-section="home">Home</a></li>
+          <li><a href="#about" data-section="about">About</a></li>
+          <li><a href="#projects" data-section="projects">Projects</a></li>
+          <li><a href="#learning" data-section="learning">Learning</a></li>
+          <li><a href="#interests" data-section="interests">Interests</a></li>
+          <li><a href="#contact" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Home ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Welcome to my little universe.</p>
+          <h1 id="hero-title">
+            <span class="hero-brand">Doris Yin</span>
+            <span class="hero-tagline">A spark isn't a soul's purpose</span>
+          </h1>
+          <p class="hero-text">
+            在學習與探索的路上，收藏喜歡的事物，也記錄那些平凡卻特別的瞬間
+          </p>
+          <a class="btn btn--primary" href="#about">Explore More
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5v14m0 0-6-6m6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="moon-glow"></div>
+          <svg class="moon" viewBox="0 0 240 240" width="240" height="240">
+            <defs>
+              <radialGradient id="moonFill" cx="38%" cy="34%" r="75%">
+                <stop offset="0" stop-color="#fbf8ff"/>
+                <stop offset="0.6" stop-color="#dcd5f5"/>
+                <stop offset="1" stop-color="#b7a6ff"/>
+              </radialGradient>
+            </defs>
+            <circle cx="120" cy="120" r="110" fill="url(#moonFill)"/>
+            <g fill="#9d8fe0" opacity="0.28">
+              <circle cx="86" cy="92" r="20"/>
+              <circle cx="152" cy="74" r="11"/>
+              <circle cx="158" cy="146" r="26"/>
+              <circle cx="96" cy="164" r="12"/>
+              <circle cx="120" cy="124" r="6"/>
+            </g>
+          </svg>
+          <span class="orbit-star s1"></span>
+          <span class="orbit-star s2"></span>
+          <span class="orbit-star s3"></span>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="往下捲動到 About"><span></span></a>
+    </section>
+
+    <!-- ============ About ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">About Me</p>
+          <h2 id="about-title">關於我</h2>
+        </header>
+
+        <div class="about-grid">
+          <figure class="about-photo reveal">
+            <img src="images/profile.jpg" alt="Doris Yin 的個人照片" width="900" height="1138" loading="lazy">
+            <figcaption>Doris Yin</figcaption>
+          </figure>
+
+          <div class="about-body reveal">
+            <p class="lead">Still Exploring🌙</p>
+            <p>目前讀人工智慧學系，也正在接觸更多實際的軟體開發工作</p>
+            <p>我喜歡接觸不同的事物，從程式開發到生活中的各種興趣，慢慢找到自己真正喜歡的方向</p>
+            <p>除了技術，我也想看看更大的世界、去更多沒去過的地方</p>
+            <p>這裡記錄著我做過的事，以及接下來想嘗試的可能</p>
+            <ul class="chip-row" aria-label="關鍵字">
+              <li>AI &amp; Coding</li>
+              <li>Travel &amp; Photography</li>
+              <li>Music &amp; Memories</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Projects ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Projects</p>
+          <h2 id="projects-title">技術作品</h2>
+          <p class="section-desc">學校作品、專題與個人開發成果。詳細內容與成果會陸續補上。</p>
+        </header>
+
+        <div class="card-grid card-grid--3">
+
+          <article class="card project-card reveal">
+            <img class="card-media" src="images/project-ai-guide.svg" alt="AI 助盲專題示意圖（佔位圖）" width="640" height="360" loading="lazy">
+            <div class="card-body">
+              <h3>AI 助盲專題</h3>
+              <p>在 Minecraft Malmo 環境中，結合 Q-learning 強化學習，研究 AI Agent 的導航與避障。</p>
+              <ul class="tags" aria-label="技術標籤">
+                <li>Minecraft Malmo</li><li>Q-learning</li><li>Reinforcement Learning</li>
+              </ul>
+              <div class="card-actions">
+                  <a class="btn btn--small"
+                     href="projects/ai-navigation/index.html">
+                      View Details
+                  </a>
+
+                  <a class="btn btn--small"
+                      href="projects/ai-navigation/index.html#demo">
+                      Live Demo
+                  </a>
+
+                  <a class="btn btn--small btn--ghost"
+                      href="https://github.com/DorisYin329/ai-crosswalk-navigation"
+                      target="_blank" rel="noopener noreferrer">
+                      GitHub
+                  </a>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="card project-card reveal">
+
+              <img class="card-media"
+                   src="images/project-computer-vision.svg"
+                   alt="中文多任務語意分析平台"
+                   width="640"
+                   height="360"
+                   loading="lazy">
+
+              <div class="card-body">
+
+                  <h3>中文多任務語意分析平台</h3>
+
+                  <p>
+                      使用多任務 BERT 模型進行中文情感、
+                      情緒及對話行為分析，
+                      並探索社群留言中的反諷表達。
+                  </p>
+
+                  <ul class="tags" aria-label="技術標籤">
+                      <li>BERT</li>
+                      <li>NLP</li>
+                      <li>Flask</li>
+                      <li>Multi-task Learning</li>
+                  </ul>
+
+                  <div class="card-actions">
+
+                      <a class="btn btn--small"
+                         href="projects/sentiment-analysis/index.html">
+                          View Details
+                      </a>
+
+                      <a class="btn btn--small"
+                         href="projects/sentiment-analysis/index.html#demo">
+                          Live Demo
+                      </a>
+
+                      <a class="btn btn--small btn--ghost"
+                         href="https://github.com/DorisYin329/sentiment-irony-analysis"
+                         target="_blank"
+                         rel="noopener noreferrer">
+                          GitHub
+                      </a>
+
+                  </div>
+
+              </div>
+
+          </article>
+
+
+          <article class="card project-card reveal">
+            <img class="card-media" src="images/project-web-dev.svg" alt="Web Development 示意圖（佔位圖）" width="640" height="360" loading="lazy">
+            <div class="card-body">
+              <h3>Web Development</h3>
+              <p>React、JavaScript、API 與資料庫相關學習，並展示可公開的實作成果。</p>
+              <ul class="tags" aria-label="技術標籤">
+                <li>React</li><li>JavaScript</li><li>API</li><li>Database</li>
+              </ul>
+              <div class="card-actions">
+                <button class="btn btn--small" type="button" data-project-details
+                  data-title="Web Development"
+                  data-summary="React、JavaScript、API 與資料庫相關學習，並展示可公開的實作成果。">View Details</button>
+                <a class="btn btn--small btn--ghost" href="https://github.com/DorisYin329" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <p class="note reveal">＊GitHub 按鈕目前連到個人首頁，待專案公開後可改為各專案的 Repository 連結。</p>
+      </div>
+    </section>
+
+    <!-- ============ Learning ============ -->
+    <section class="section" id="learning" aria-labelledby="learning-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Learning Journey</p>
+          <h2 id="learning-title">學習歷程</h2>
+        </header>
+
+        <div class="skill-grid">
+          <article class="card skill-card reveal">
+            <h3>Machine Learning &amp; RL</h3>
+            <p>機器學習與強化學習</p>
+            <ul class="tags" aria-label="技術標籤">
+            <li>Python</li>
+            <li>Machine Learning</li>
+            <li>Q-learning</li>
+            <li>Project Malmo</li>
+            <li>PPO</li>
+        </ul>
+
+          </article>
+
+          <!-- 電腦視覺與影像處理 -->
+          <article class="skill-card reveal">
+
+              <h3>Computer Vision</h3>
+
+              <p>電腦視覺與影像處理</p>
+
+              <ul class="tags" aria-label="技術標籤">
+                  <li>YOLOv8</li>
+                  <li>ResNet18</li>
+                  <li>Image Processing</li>
+                  <li>Image Classification</li>
+                  <li>Object Detection</li>
+                  <li>Age Regression</li>
+              </ul>
+
+          </article>
+
+          <!-- 自然語言處理 -->
+          <article class="skill-card reveal">
+
+              <h3>Natural Language Processing</h3>
+
+              <p>自然語言處理</p>
+
+              <ul class="tags" aria-label="技術標籤">
+                  <li>BERT</li>
+                  <li>PyTorch</li>
+                  <li>Multi-task Learning</li>
+                  <li>Sentiment Analysis</li>
+                  <li>Emotion Analysis</li>
+                  <li>Dialogue Act</li>
+              </ul>
+
+          </article>
+
+          <!-- 人工智慧應用開發 -->
+          <article class="skill-card reveal">
+
+              <h3>AI Application Development</h3>
+
+              <p>人工智慧應用開發</p>
+
+              <ul class="tags" aria-label="技術標籤">
+                  <li>GMM</li>
+                  <li>Anomaly Detection</li>
+                  <li>GPS Trajectory Analysis</li>
+                  <li>Feature Extraction</li>
+                  <li>LLM</li>
+                  <li>SQLite</li>
+                  <li>Risk Classification</li>
+              </ul>
+
+            
+          </article>
+        </div>
+
+        <ol class="timeline">
+
+            <li class="reveal">
+                <h3>大學學習 University</h3>
+                <p>
+                   就讀淡江大學人工智慧學系，從 Python 程式設計、
+                   機器學習到深度學習，透過課堂作業累積實作經驗。
+                </p>
+            </li>
+
+            <li class="reveal">
+                <h3>專題實作 AI Projects</h3>
+                <p>
+                    嘗試不同領域的 AI 應用，包含影像處理、
+                    物件辨識、Minecraft 強化學習道路導航，
+                    以及中文多任務語意分析。
+                </p>
+            </li>
+
+            <li class="reveal">
+                <h3>企業實習 Internship</h3>
+                <p>
+                    接觸實際的軟體開發環境，學習如何分析需求、
+                    排查問題，並累積系統開發經驗。
+                </p>
+            </li>
+
+            <li class="reveal">
+                <h3>自主開發 Independent Development</h3>
+                <p>
+                    自主開發長者智慧異常路徑分析平台，
+                    透過 GPS 路徑資料與 GMM 建立個人化活動模型，
+                    進行異常行為偵測與風險分級，
+                    並結合 LLM 進行生活型態分析與摘要生成。
+                </p>
+            </li>
+
+            <li class="reveal">
+                <h3>持續探索 Currently Exploring</h3>
+                <p>
+                    目前正在學習 LLM、LangGraph 與 AI Agent，
+                    也透過建立個人網站，整理過去的作品與學習紀錄。
+                </p>
+            </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Interests ============ -->
+    <section class="section" id="interests" aria-labelledby="interests-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">My Interests</p>
+          <h2 id="interests-title">個人興趣</h2>
+          <p class="section-desc">程式之外的我。之後會把這些主題慢慢長成獨立頁面。</p>
+        </header>
+
+        <div class="card-grid card-grid--4">
+          <article class="card interest-card reveal">
+            <svg class="interest-icon" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M8 12h32a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H26l-8 7v-7H8a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 21h16M16 27h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <h3>Anime &amp; Stories</h3>
+            <p>喜歡的動畫與影劇，例如名偵探柯南、迪士尼。</p>
+            <span class="soon">心得整理中</span>
+          </article>
+          <article class="card interest-card reveal">
+            <svg class="interest-icon" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M18 37V12l18-4v25" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="13" cy="37" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="31" cy="33" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+            <h3>Music</h3>
+            <p>喜歡 Super Junior，也珍惜每一場演唱會與音樂帶來的回憶。</p>
+            <span class="soon">回憶整理中</span>
+          </article>
+          <article class="card interest-card reveal">
+            <svg class="interest-icon" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m30 18-4 10-8 4 4-10 8-4Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+            <h3>Travel</h3>
+            <p>旅行紀錄、旅遊照片與心得，把路上的風景留下來。</p>
+            <span class="soon">即將更新</span>
+          </article>
+          <article class="card interest-card reveal">
+            <svg class="interest-icon" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M8 16h8l3-4h10l3 4h8a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V18a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="24" cy="27" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+            <h3>Photography</h3>
+            <p>使用 Nikon Z fc 拍攝，喜歡記錄旅行、人像與日常風景。</p>
+            <span class="soon">作品整理中</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title">聯絡方式</h2>
+        </header>
+
+        <ul class="contact-list">
+          <li class="card contact-card reveal">
+            <h3>GitHub</h3>
+            <a href="https://github.com/DorisYin329" target="_blank" rel="noopener noreferrer">github.com/DorisYin329</a>
+          </li>
+          <li class="card contact-card contact-card--empty reveal">
+            <h3>Email</h3>
+            <!-- 填入後：<a href="mailto:你的信箱">你的信箱</a> -->
+            <span>待補（尚未設定）</span>
+          </li>
+          <li class="card contact-card contact-card--empty reveal">
+            <h3>Social</h3>
+            <!-- 例如 Instagram、LinkedIn 等，填入後改成 <a> 連結 -->
+            <span>待補（尚未設定）</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Shadow Moon · Between Code &amp; Stars.</p>
+      <a href="#top">回到頂端 ↑</a>
+    </div>
+  </footer>
+
+  <!-- 專案詳情視窗 -->
+  <dialog class="modal" id="project-dialog" aria-labelledby="dialog-title">
+    <form method="dialog">
+      <button class="modal-close" aria-label="關閉">×</button>
+    </form>
+    <h3 id="dialog-title"></h3>
+    <p id="dialog-summary"></p>
+    <p class="modal-placeholder">詳細內容、成果與連結整理中，之後會補上。</p>
+  </dialog>
+
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+
+:root {
+    color-scheme: dark;
+
+    --bg: #101326;
+    --panel: #1a1e35;
+    --accent: #b5a4f5;
+    --text: #f0edff;
+    --muted: #aeb2cf;
+    --border: #363854;
+
+    --positive: #8cd5b0;
+    --negative: #e9a1ad;
+    --neutral: #b5a4f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+
+    font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+    line-height: 1.8;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            #20244d,
+            transparent 55%
+        ),
+        var(--bg);
+
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #ffffff88 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            #b5a4f544 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        173px 157px,
+        239px 211px;
+
+    background-position:
+        30px 50px,
+        100px 20px;
+
+    z-index: -1;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    padding: 20px 6%;
+
+    border-bottom: 1px solid var(--border);
+    background: #101326cc;
+}
+
+.brand {
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+
+main {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+header {
+    padding: 80px 0 40px;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.4;
+    margin: 12px 0;
+}
+
+h2 {
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+h3 {
+    line-height: 1.5;
+}
+
+p,
+small {
+    color: var(--muted);
+}
+
+.subtitle {
+    font-size: 22px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+section {
+    margin: 65px 0;
+    scroll-margin-top: 30px;
+}
+
+.panel {
+    background: #1a1e35e8;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: clamp(16px, 3vw, 30px);
+    margin: 20px 0;
+}
+
+.tags,
+.actions,
+.flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.tags span {
+    padding: 5px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 30px;
+
+    background: #b5a4f512;
+    color: var(--accent);
+
+    font-size: 14px;
+}
+
+.btn,
+button {
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    border: 1px solid var(--accent);
+    border-radius: 30px;
+
+    background: transparent;
+    color: var(--text);
+
+    font: inherit;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover,
+.btn:hover {
+    background: #b5a4f525;
+    transform: translateY(-2px);
+}
+
+.primary,
+button[aria-pressed="true"] {
+    background: var(--accent);
+    color: #15172b;
+    font-weight: 600;
+}
+
+.primary:hover,
+button[aria-pressed="true"]:hover {
+    background: #c9bcff;
+}
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.stats > div {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 18px 12px;
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+.stats strong {
+    display: block;
+
+    color: var(--accent);
+    font-size: clamp(18px, 3vw, 28px);
+}
+
+label {
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    color: var(--muted);
+}
+
+select,
+textarea {
+    width: 100%;
+
+    background: var(--bg);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 14px;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+#analyze {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.notice {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.topic {
+    background: var(--bg);
+
+    padding: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.topic h3 {
+    margin: 5px 0;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 15px;
+
+    background: #20243b;
+}
+
+.result.positive {
+    border-left-color: var(--positive);
+}
+
+.result.negative {
+    border-left-color: var(--negative);
+}
+
+.result.neutral {
+    border-left-color: var(--neutral);
+}
+
+.result .sentence-text {
+    font-size: 18px;
+    color: var(--text);
+}
+
+.result strong {
+    font-size: 21px;
+    margin: 8px 0;
+}
+
+.result strong.positive {
+    color: var(--positive);
+}
+
+.result strong.negative {
+    color: var(--negative);
+}
+
+.result strong.neutral {
+    color: var(--neutral);
+}
+
+.result .stats {
+    margin-bottom: 0;
+}
+
+.flow {
+    justify-content: center;
+}
+
+.flow span {
+    padding: 15px 20px;
+
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.flow b {
+    color: var(--accent);
+}
+
+.classification-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.classification-grid .panel {
+    margin: 0;
+}
+
+.classification-grid h3 {
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+
+    padding: 40px 0;
+
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+
+    .classification-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 40px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .stats > div {
+        padding: 10px 6px;
+        font-size: 13px;
+    }
+
+    .stats strong {
+        font-size: 20px;
+    }
+
+    .result {
+        padding: 14px;
+    }
+
+    .result strong {
+        font-size: 16px;
+    }
+
+    .flow {
+        gap: 8px;
+    }
+
+    .flow span {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+}

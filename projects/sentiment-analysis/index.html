@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Multi-task NLP | Shadow Moon</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="demo.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <a class="brand" href="../../index.html">☾ Shadow Moon</a>
+        <a href="../../index.html#projects">← Back to Projects</a>
+    </nav>
+
+    <main>
+
+        <header>
+            <p class="eyebrow">
+                Academic Project / Natural Language Processing
+            </p>
+
+            <h1>中文多任務語意分析平台</h1>
+
+            <p class="subtitle">
+                Chinese Multi-task NLP Analysis Platform
+            </p>
+
+            <p>
+                以多任務 BERT 進行中文情感、情緒與對話行為分類，
+                探索社群留言中的語意及反諷表達。
+            </p>
+
+            <div class="tags">
+                <span>BERT</span>
+                <span>Python</span>
+                <span>PyTorch</span>
+                <span>Flask</span>
+                <span>NLP</span>
+                <span>Multi-task Learning</span>
+            </div>
+
+            <div class="actions">
+                <a class="btn primary" href="#demo">
+                    Try Demo
+                </a>
+
+                <a class="btn"
+                   href="https://github.com/DorisYin329/sentiment-irony-analysis"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View on GitHub
+                </a>
+            </div>
+        </header>
+
+        <!-- 專題介紹 -->
+
+        <section>
+            <p class="eyebrow">01 / Overview</p>
+
+            <h2>專題介紹</h2>
+
+            <div class="panel">
+                <p>
+                    本專題透過多任務 BERT 模型，
+                    同時分析中文文字中的情感傾向、細部情緒與對話行為，
+                    並探索社群留言中較難辨識的反諷表達。
+                </p>
+
+                <p>
+                    原始平台支援手動文字分析及 PTT CSV 留言分析，
+                    透過 Flask API 呼叫模型並回傳分類結果。
+                </p>
+
+                <div class="stats">
+                    <div>
+                        <strong>3</strong>
+                        情感類別
+                    </div>
+
+                    <div>
+                        <strong>13</strong>
+                        情緒類別
+                    </div>
+
+                    <div>
+                        <strong>19</strong>
+                        對話行為類別
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 互動展示 -->
+
+        <section id="demo">
+
+            <p class="eyebrow">02 / Interactive Demo</p>
+
+            <h2>語意分析展示</h2>
+
+            <div class="panel">
+
+                <p class="notice">
+                    此為靜態網頁展示版本，使用人工設計的範例與分類標籤，
+                    並非 BERT 模型即時推論。
+                </p>
+
+                <div class="actions">
+                    <button id="manual" aria-pressed="true">
+                        單句分析
+                    </button>
+
+                    <button id="batch" aria-pressed="false">
+                        留言分析
+                    </button>
+                </div>
+
+                <!-- 單句分析 -->
+
+                <div id="single">
+
+                    <label for="example">選擇測試範例</label>
+
+                    <select id="example"></select>
+
+                    <label for="sentence">分析文字</label>
+
+                    <textarea id="sentence"
+                              readonly
+                              rows="3"></textarea>
+
+                </div>
+
+                <!-- 留言分析 -->
+
+                <div id="group" hidden>
+
+                    <h3>模擬社群留言</h3>
+
+                    <div class="topic">
+                        <small>Discussion Topic</small>
+                        <h3>工作與生活平衡</h3>
+
+                        <p>
+                            工作壓力與加班是否影響生活品質？
+                        </p>
+
+                        <small>
+                            以下使用虛構留言範例，非真實 PTT 資料。
+                        </small>
+                    </div>
+
+                </div>
+
+                <button id="analyze" class="primary">
+                    開始分析
+                </button>
+
+                <div id="result" aria-live="polite"></div>
+
+            </div>
+
+        </section>
+
+        <!-- 模型架構 -->
+
+        <section>
+
+            <p class="eyebrow">03 / Architecture</p>
+
+            <h2>系統架構</h2>
+
+            <div class="panel">
+
+                <div class="flow">
+                    <span>HTML / JavaScript</span>
+                    <b>→</b>
+                    <span>Flask API</span>
+                    <b>→</b>
+                    <span>多任務 BERT</span>
+                </div>
+
+                <div class="stats">
+
+                    <div>
+                        Sentiment
+                        <br>
+                        <small>情感分析</small>
+                    </div>
+
+                    <div>
+                        Emotion
+                        <br>
+                        <small>情緒分析</small>
+                    </div>
+
+                    <div>
+                        Dialogue Act
+                        <br>
+                        <small>對話行為分析</small>
+                    </div>
+
+                </div>
+
+                <p>
+                    原始系統透過 Flask API 接收文字，
+                    由模型進行多任務分類，再將結果回傳至前端介面。
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- 技術介紹 -->
+
+        <section>
+
+            <p class="eyebrow">04 / Classification</p>
+
+            <h2>多任務分類</h2>
+
+            <div class="classification-grid">
+
+                <div class="panel">
+
+                    <small>Task 01</small>
+
+                    <h3>Sentiment Analysis</h3>
+
+                    <p>情感傾向分析</p>
+
+                    <div class="tags">
+                        <span>Positive</span>
+                        <span>Neutral</span>
+                        <span>Negative</span>
+                    </div>
+
+                </div>
+
+                <div class="panel">
+
+                    <small>Task 02</small>
+
+                    <h3>Emotion Analysis</h3>
+
+                    <p>細部情緒辨識，共 13 種類別。</p>
+
+                    <div class="tags">
+                        <span>Happy</span>
+                        <span>Anger</span>
+                        <span>Sadness</span>
+                        <span>Fear</span>
+                        <span>Worried</span>
+                        <span>Grateful</span>
+                    </div>
+
+                </div>
+
+                <div class="panel">
+
+                    <small>Task 03</small>
+
+                    <h3>Dialogue Act</h3>
+
+                    <p>對話行為辨識，共 19 種類別。</p>
+
+                    <div class="tags">
+                        <span>Irony</span>
+                        <span>Question</span>
+                        <span>Agreement</span>
+                        <span>Disagreement</span>
+                        <span>Apology</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <p>☾ Shadow Moon — Between Code &amp; Stars</p>
+
+            <a href="../../index.html#projects">
+                Back to Projects
+            </a>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

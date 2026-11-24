@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dorisyin329.github.io/sitemap.xml
