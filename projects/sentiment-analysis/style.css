@@ -438,3 +438,419 @@ footer {
     }
 
 }
+
+
+/* =========================================
+   Shadow Moon - Light Editorial Theme
+   Chinese Multi-task NLP
+   ========================================= */
+
+:root {
+    color-scheme: light;
+
+    --bg: #FAF9F6;
+    --panel: #FFFFFF;
+    --accent: #3448A1;
+    --text: #253451;
+    --muted: #53617B;
+    --border: #D9DFEA;
+
+    --bg-soft: #F4F6FA;
+    --accent-soft: #E8EDF8;
+    --accent-hover: #253A91;
+
+    /* 情感分類顏色 */
+    --positive: #287653;
+    --negative: #B94D63;
+    --neutral: #62749A;
+}
+
+/* ==============================
+   整體背景
+   ============================== */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* 淡化背景星星 */
+body::before {
+    background-image:
+        radial-gradient(
+            circle,
+            #A9B9D855 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            #B8C8E533 1px,
+            transparent 1.5px
+        );
+
+    opacity: 0.5;
+}
+
+/* ==============================
+   導覽列
+   ============================== */
+
+nav {
+    background: rgba(250, 249, 246, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
+nav a {
+    color: var(--accent);
+}
+
+nav a:hover {
+    color: var(--accent-hover);
+}
+
+.brand {
+    color: var(--accent);
+}
+
+/* ==============================
+   標題與文字
+   ============================== */
+
+h1,
+h2,
+h3 {
+    color: var(--text);
+}
+
+.eyebrow {
+    color: var(--accent);
+}
+
+.subtitle,
+p,
+small {
+    color: var(--muted);
+}
+
+/* ==============================
+   技術標籤
+   ============================== */
+
+.tags span {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+/* ==============================
+   內容卡片
+   ============================== */
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 4px 16px rgba(37, 52, 81, 0.04);
+}
+
+/* ==============================
+   Button 按鈕
+   ============================== */
+
+.btn,
+button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+
+    box-shadow: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btn:hover,
+button:not(:disabled):hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+    transform: none;
+    box-shadow: none;
+}
+
+/* 主要按鈕與目前選取的模式 */
+.btn.primary,
+button.primary,
+button[aria-pressed="true"] {
+    background: var(--accent);
+    color: #FFFFFF;
+    border-color: var(--accent);
+}
+
+.btn.primary:hover,
+button.primary:not(:disabled):hover,
+button[aria-pressed="true"]:hover {
+    background: var(--accent-hover);
+    color: #FFFFFF;
+    border-color: var(--accent-hover);
+}
+
+/* 停用狀態 */
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ==============================
+   分析模式切換
+   ============================== */
+
+#manual,
+#batch {
+    min-width: 110px;
+}
+
+#manual[aria-pressed="false"],
+#batch[aria-pressed="false"] {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+#manual[aria-pressed="false"]:hover,
+#batch[aria-pressed="false"]:hover {
+    background: var(--accent-soft);
+}
+
+/* ==============================
+   開始分析按鈕
+   ============================== */
+
+#analyze {
+    background: var(--accent);
+    color: #FFFFFF;
+    border-color: var(--accent);
+}
+
+#analyze:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+/* ==============================
+   統計數據卡片
+   ============================== */
+
+.stats > div {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.stats strong {
+    color: var(--accent);
+}
+
+.stats small {
+    color: var(--muted);
+}
+
+/* ==============================
+   表單與文字輸入框
+   ============================== */
+
+label {
+    color: var(--text);
+    font-weight: 500;
+}
+
+select,
+textarea {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+select:hover,
+textarea:hover {
+    border-color: #A9B9D8;
+}
+
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(52, 72, 161, 0.08);
+}
+
+/* 展示用唯讀文字區域 */
+textarea[readonly] {
+    background: var(--bg-soft);
+    color: var(--text);
+}
+
+select option {
+    background: #FFFFFF;
+    color: var(--text);
+}
+
+/* ==============================
+   提示文字
+   ============================== */
+
+.notice {
+    color: var(--muted);
+}
+
+/* ==============================
+   模擬社群留言
+   ============================== */
+
+.topic {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+}
+
+.topic h3 {
+    color: var(--text);
+}
+
+.topic small {
+    color: var(--muted);
+}
+
+/* ==============================
+   分析結果卡片
+   ============================== */
+
+.result {
+    background: #F8FAFD;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+
+    box-shadow:
+        0 3px 12px rgba(37, 52, 81, 0.04);
+}
+
+/* 正向 */
+.result.positive {
+    border-left-color: var(--positive);
+}
+
+/* 負向 */
+.result.negative {
+    border-left-color: var(--negative);
+}
+
+/* 中立 */
+.result.neutral {
+    border-left-color: var(--neutral);
+}
+
+/* 原始分析文字 */
+.result .sentence-text {
+    color: var(--text);
+}
+
+/* 分析結果內部卡片 */
+.result .stats > div {
+    background: #FFFFFF;
+    border-color: var(--border);
+}
+
+.result strong {
+    color: var(--accent);
+}
+
+/* 正向結果文字 */
+.result strong.positive {
+    color: var(--positive);
+}
+
+/* 負向結果文字 */
+.result strong.negative {
+    color: var(--negative);
+}
+
+/* 中立結果文字 */
+.result strong.neutral {
+    color: var(--neutral);
+}
+
+/* ==============================
+   系統架構圖
+   ============================== */
+
+.flow span {
+    background: var(--bg-soft);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.flow b {
+    color: var(--accent);
+}
+
+/* ==============================
+   多任務分類卡片
+   ============================== */
+
+.classification-grid .panel {
+    background: var(--panel);
+    border-color: var(--border);
+}
+
+.classification-grid h3 {
+    color: var(--accent);
+}
+
+.classification-grid small {
+    color: var(--muted);
+}
+
+/* ==============================
+   原始系統操作影片
+   ============================== */
+
+video {
+    border: 1px solid var(--border);
+}
+
+/* ==============================
+   Footer 頁尾
+   ============================== */
+
+footer {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+footer p {
+    color: var(--muted);
+}
+
+footer a {
+    color: var(--accent);
+}
+
+footer a:hover {
+    color: var(--accent-hover);
+}
+
+/* ==============================
+   鍵盤操作焦點
+   ============================== */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}

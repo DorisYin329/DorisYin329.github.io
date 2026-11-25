@@ -363,3 +363,332 @@ footer {
         font-size: 13px;
     }
 }
+
+
+/* =========================================
+   Shadow Moon - Light Editorial Theme
+   AI Road Navigation
+   ========================================= */
+
+:root {
+    --bg: #FAF9F6;
+    --panel: #FFFFFF;
+    --accent: #3448A1;
+    --text: #253451;
+    --muted: #53617B;
+    --border: #D9DFEA;
+
+    --bg-soft: #F4F6FA;
+    --accent-soft: #E8EDF8;
+    --accent-hover: #253A91;
+}
+
+/* ==============================
+   整體背景
+   ============================== */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* 淡化背景星星 */
+body::before {
+    background-image:
+        radial-gradient(
+            circle,
+            #A9B9D855 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            #B8C8E533 1px,
+            transparent 1.5px
+        );
+
+    opacity: 0.5;
+}
+
+/* ==============================
+   導覽列
+   ============================== */
+
+.navbar {
+    background: rgba(250, 249, 246, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar a {
+    color: var(--accent);
+}
+
+.navbar a:hover {
+    color: var(--accent-hover);
+}
+
+.brand {
+    color: var(--accent);
+}
+
+/* ==============================
+   標題與文字
+   ============================== */
+
+h1,
+h2,
+h3 {
+    color: var(--text);
+}
+
+.eyebrow {
+    color: var(--accent);
+}
+
+.hero h2,
+.description,
+p,
+small {
+    color: var(--muted);
+}
+
+/* ==============================
+   技術標籤
+   ============================== */
+
+.tags span {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+/* ==============================
+   內容卡片
+   ============================== */
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 4px 16px rgba(37, 52, 81, 0.04);
+}
+
+/* ==============================
+   Button 按鈕
+   ============================== */
+
+.btn,
+button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+
+    box-shadow: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btn:hover,
+button:not(:disabled):hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+    transform: none;
+    box-shadow: none;
+}
+
+/* 主要按鈕 */
+.btn.primary,
+button.primary {
+    background: var(--accent);
+    color: #FFFFFF;
+    border-color: var(--accent);
+}
+
+.btn.primary:hover,
+button.primary:not(:disabled):hover {
+    background: var(--accent-hover);
+    color: #FFFFFF;
+    border-color: var(--accent-hover);
+}
+
+/* 停用狀態 */
+button:disabled,
+button:disabled:hover {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 鍵盤焦點 */
+.btn:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* Reset 按鈕 */
+#resetBtn {
+    background: var(--bg-soft);
+    border-color: #A9B9D8;
+    color: var(--accent);
+}
+
+#resetBtn:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+/* ==============================
+   系統架構圖
+   ============================== */
+
+.architecture div {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.architecture span {
+    color: var(--accent);
+}
+
+.architecture small {
+    color: var(--muted);
+}
+
+/* ==============================
+   數據與強化學習參數
+   ============================== */
+
+.stats > div {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+}
+
+.stats small {
+    color: var(--muted);
+}
+
+.stats strong {
+    color: var(--accent);
+}
+
+/* ==============================
+   道路導航互動模擬
+   ============================== */
+
+/* 保留原本的道路地圖配色 */
+#roadCanvas {
+    border: 1px solid var(--border);
+}
+
+.legend {
+    color: var(--muted);
+}
+
+.notice {
+    color: var(--muted);
+}
+
+/* Agent 狀態資訊 */
+.state-info {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+}
+
+.state-info p {
+    color: var(--muted);
+}
+
+.state-info span {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* 5 × 5 環境觀察 */
+.observation div {
+    border: 1px solid rgba(37, 52, 81, 0.12);
+}
+
+/* ==============================
+   表單與程式碼區域
+   ============================== */
+
+select {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+pre {
+    background: var(--bg-soft);
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+
+/* ==============================
+   Q-learning 數值圖表
+   ============================== */
+
+.q-track {
+    background: var(--accent-soft);
+}
+
+.q-track::after {
+    border-left: 1px solid #A9B9D8;
+}
+
+.q-bar {
+    background: var(--accent);
+}
+
+.q-bar.negative {
+    background: #C96C80;
+}
+
+#bestAction {
+    color: var(--accent);
+}
+
+/* ==============================
+   影片與成果圖片
+   ============================== */
+
+video,
+.result-image {
+    border: 1px solid var(--border);
+}
+
+figcaption {
+    color: var(--muted);
+}
+
+/* ==============================
+   Footer 頁尾
+   ============================== */
+
+footer {
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: var(--muted);
+}
+
+footer a {
+    color: var(--accent);
+}
+
+footer a:hover {
+    color: var(--accent-hover);
+}

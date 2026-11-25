@@ -100,7 +100,7 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       // 星星數量依螢幕面積調整，上限 140
-      var count = Math.min(140, Math.round((w * h) / 9000));
+      var count = Math.min(45, Math.round((w * h) / 24000));
       stars = [];
       for (var i = 0; i < count; i++) {
         stars.push({
@@ -122,7 +122,7 @@
         var s = stars[i];
         var a = animate ? s.base + Math.sin(t * s.speed + s.phase) * 0.3 : s.base;
         ctx.globalAlpha = Math.max(0.08, Math.min(1, a));
-        ctx.fillStyle = '#f2f0ff';
+        ctx.fillStyle = '#A9B9D8';
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fill();
